@@ -1,0 +1,14 @@
+services:
+  - type: web
+    name: markbook
+    env: node
+    plan: free
+    buildCommand: npm install && npm run build
+    startCommand: npm run start
+    envVars:
+      - key: GEMINI_API_KEY
+        sync: false
+      - key: GEMINI_MODEL
+        value: gemini-2.5-flash
+      - key: NODE_VERSION
+        value: 20.11.1
